@@ -3,12 +3,12 @@ import { test, expect } from '@playwright/test'
 /// AAA - Arrange, Act, Assert 
 /// PAV - Preparar, Agir, Validar
 
-test('deve consultar um pedido aprovado', async ({ page }) => { 
+test('deve consultar um pedido aprovado', async ({ page // É a aba do navegador }) => { // Async garante que cada step seja executado de forma assíncrona
     // Arrange
-  await page.goto('http://localhost:5173/')
-  await expect(page.getByTestId('hero-section').getByRole('heading')).toContainText('Velô Sprint')
-  
-  await page.getByRole('link', { name: 'Consultar Pedido' }).click()
+  await page.goto('http://localhost:5173/') // GO TOgarante carregra a página
+  await expect(page.getByTestId('hero-section').getByRole('heading')).toContainText('Velô Sprint') // EXPECT Garantir que tenha a descrição
+
+  await page.getByRole('link', { name: 'Consultar Pedido' }).click() //await garante que o click seja executado
   await expect(page.getByRole('heading')).toContainText('Consultar Pedido')
 
   // Act
