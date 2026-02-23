@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test'
 /// AAA - Arrange, Act, Assert 
 /// PAV - Preparar, Agir, Validar
 
-test('deve consultar um pedido aprovado', async ({ page // É a aba do navegador }) => { // Async garante que cada step seja executado de forma assíncrona
+test('deve consultar um pedido aprovado', async ({ page }) => { // Async garante que cada step seja executado de forma assíncrona
     // Arrange
   await page.goto('http://localhost:5173/') // GO TOgarante carregra a página
   await expect(page.getByTestId('hero-section').getByRole('heading')).toContainText('Velô Sprint') // EXPECT Garantir que tenha a descrição
