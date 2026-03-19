@@ -39,6 +39,13 @@ expect: {
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+
+    /* Trace para mostrar valor ativa o trace alterando para 'on' 
+
+       para mostrar todos os traces ou no terminal digitar yarn playwright test --trace on
+       
+       Alterando trace para retain-on-failure irá mostrar somente com erros
+    */
     trace: 'on-first-retry',
 
 
